@@ -7,8 +7,12 @@ class MyComponent extends HTMLElement {
           }
         </style>
 
-        <h1>Hello DSC!</h1>
-        <h3>Welcome to Web Components (from custom component)</h3>
+        <h1>
+          Hello DSC
+        </h1>
+        <h3>
+          h3: Welcome to Web Components (from custom component)
+        </h3>
       `;
   }
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="my-component.js"></script>
+
+    <script src="my-component-shadow.js"></script>
+
+    <style>
+      h3 {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <my-component></my-component> -->
+
+    <my-component-shadow name="DSC"> </my-component-shadow>
+
+    <!-- <my-component-shadow name="DSC">
+      <div slot="slot1">Parent Markup 1</div>
+      <div slot="slot2">Parent Markup 2</div>
+      <div>Parent Markup 3</div>
+    </my-component-shadow> -->
+
+    <h3>h3: PARENT BODY</h3>
+
+    <script>
+      (() => {
+        const cmp = document.querySelector('my-component-shadow');
+        cmp.addEventListener('myComponentEvent', v => console.log(v));
+      })();
+    </script>
+  </body>
+</html>
