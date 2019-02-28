@@ -11,7 +11,7 @@ tmplt.innerHTML = `
             Hello <span id="name"></span>
           </h1>
           <h3>
-            h3: Welcome to Web Components (from custom component)
+            h3 (from custom component): Welcome to Web Components 
           </h3>
           
           <button id="btn">TELL PARENT</button>
@@ -30,7 +30,7 @@ class MyComponentShadow extends HTMLElement {
 
     this._name = '';
 
-    let shadowRoot = this.attachShadow({ mode: 'open' });
+    const shadowRoot = this.attachShadow({ mode: 'open' });
 
     shadowRoot.appendChild(tmplt.content.cloneNode(true));
 
@@ -63,3 +63,41 @@ class MyComponentShadow extends HTMLElement {
 }
 
 window.customElements.define('my-component-shadow', MyComponentShadow);
+
+/* 
+const tmplt = document.createElement('template');
+
+tmplt.innerHTML = `
+          <h1>
+            Hello <span id="name"></span>
+          </h1>
+        `;
+
+let shadowRoot = this.attachShadow({ mode: 'open' });
+
+shadowRoot.appendChild(tmplt.content.cloneNode(true));
+
+---------------------------------
+
+<template id="my-paragraph">
+  <p>My paragraph</p>
+</template> 
+
+let template = document.getElementById('my-paragraph');
+let templateContent = template.content;
+document.body.appendChild(templateContent);
+
+---------------------------------
+
+<better-button>
+  <!-- the image and span are better-button's light DOM -->
+  <img src="gear.svg" slot="icon">
+  <span>Settings</span>
+</better-button>
+
+---------------------------------
+The closed mode of Shadow DOM provides the same encapsulation as the open mode 
+but additionally allows the component author to hide access to the ShadowRoot
+
+
+*/

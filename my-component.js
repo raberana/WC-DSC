@@ -11,7 +11,7 @@ class MyComponent extends HTMLElement {
           Hello DSC
         </h1>
         <h3>
-          h3: Welcome to Web Components (from custom component)
+          h3 (from custom component): Welcome to Web Components 
         </h3>
       `;
   }
