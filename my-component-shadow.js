@@ -38,6 +38,7 @@ class MyComponentShadow extends HTMLElement {
 
     this.buttonElement = this.shadowRoot.querySelector('#btn');
 
+    // Send message to parent container
     this.buttonElement.addEventListener('click', e => {
       this.dispatchEvent(
         new CustomEvent('myComponentEvent', {
@@ -56,7 +57,8 @@ class MyComponentShadow extends HTMLElement {
   get name() {
     return this._name;
   }
-
+  
+  // callback executed if one of the exposed properties has changed
   attributeChangedCallback(propertyName, oldValue, newValue) {
     this[propertyName] = newValue;
   }
